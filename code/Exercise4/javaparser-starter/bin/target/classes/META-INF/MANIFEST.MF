@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Built-By: EyaSammari
+Build-Jdk: 17.0.9
+Class-Path: javaparser-core-3.16.2.jar
+Main-Class: fr.istic.vv.Main
+Created-By: Maven Integration for Eclipse
+
