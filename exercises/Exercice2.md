@@ -10,9 +10,11 @@ Pick a Java project from Github (see the [instructions](../sujet.md) for suggest
 We chose the **Apache Commons Collections** project and used PMD to analyze its source code. 
 To perform the analysis, we ran the following PMD command:
 
-``` pmd check -f text -R rulesets/java/quickstart.xml -d "...\commons-collections-master" -r "....\ResultEx2.txt"```
+``` bash
+pmd check -f text -R rulesets/java/quickstart.xml -d "...\commons-collections-master" -r "....\ResultEx2.txt"
+```
 
-This command generated a report (ResultEx2.txt) containing the issues identified by PMD, using the predefined ruleset from rulesets/java/quickstart.xml. 
+This command generated a report (`ResultEx2.txt`) containing the issues identified by PMD, using the predefined ruleset from rulesets/java/quickstart.xml. 
 
 ### True Positive :
 
