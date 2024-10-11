@@ -56,12 +56,13 @@ The figure below shows the graph that results from the class TestStatistics.
 
 ![Connections between methods](https://github.com/user-attachments/assets/59504cb4-423f-48e1-a3b9-1ca8a01c3e84)
 
-**TCC :**
 
 - **Nshared**: The number of method pairs that share at least one instance variable.
 - **Npairs**: The total number of method pairs in the class.
-- **Nconnected**: The number of method pairs that are either directly or indirectly connected.
+- **Nconnected**: The number of method pairs that are either **directly** or **indirectly** connected.
   
+**TCC :**  
+
   $$
   TCC = \frac{N_{\text{shared}}}{N_{\text{pairs}}} = \frac{6}{6} = 1
   $$
