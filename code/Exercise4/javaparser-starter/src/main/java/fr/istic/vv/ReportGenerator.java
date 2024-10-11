@@ -10,10 +10,18 @@ public class ReportGenerator {
 
     private final Map<String, Set<String>> fieldsWithoutGetters;
 
+     /**
+     * Constructor to initialize the ReportGenerator with the given map of fields without getters
+     * @param fieldsWithoutGetters : map containing class names as keys and sets of field names
+     */
     public ReportGenerator(Map<String, Set<String>> fieldsWithoutGetters) {
         this.fieldsWithoutGetters = fieldsWithoutGetters;
     }
 
+    /**
+     * Generates a CSV report of the fields without getters for each class.
+     * @throws IOException If there is an error while writing the report to the file.
+     */
     public void generateReport() throws IOException {
         String reportPath = Paths.get("").toAbsolutePath().toString() + "/report.csv";
         try (FileWriter csvWriter = new FileWriter(reportPath)) {
