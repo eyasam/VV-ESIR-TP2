@@ -1,5 +1,8 @@
 package fr.istic.vv;
 
+/**
+ * A simple example class for testing purposes before moving on to a full project.
+ */
 
 public class Example {
 
