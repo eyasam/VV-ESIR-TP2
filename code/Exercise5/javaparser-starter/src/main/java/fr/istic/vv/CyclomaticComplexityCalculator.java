@@ -11,10 +11,19 @@ public class CyclomaticComplexityCalculator extends VoidVisitorAdapter<Void> {
     private int complexity;
     private ReportGenerator report;
 
+    /**
+     * Constructor to initialize the CyclomaticComplexityCalculator with a report generator
+     * @param report 
+     */
     public CyclomaticComplexityCalculator(ReportGenerator report) {
         this.report = report;
     }
 
+      /**
+     * Visits a method declaration and calculates its cyclomatic complexity.
+     * @param method The method declaration being visited.
+     * @param arg Additional argument
+     */
     @Override
     public void visit(MethodDeclaration method, Void arg) {
     	
@@ -37,6 +46,11 @@ public class CyclomaticComplexityCalculator extends VoidVisitorAdapter<Void> {
         }
     }
 
+     /**
+     * Calculates the cyclomatic complexity of a method (based on control flow statements)
+     * @param method The method whose cyclomatic complexity is being calculated.
+     * @return The cyclomatic complexity of the method.
+     */
     private int calculateCyclomaticComplexity(MethodDeclaration method) {
         complexity = 1; 
         
