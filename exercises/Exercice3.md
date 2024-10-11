@@ -24,7 +24,9 @@ Use your rule with different projects and describe you findings below. See the [
 ## Answer
 
 After installing a compatible version of JavaFX and executing the command 
-```pmd.bat designer```, we developed a custom rule for PMD aimed at detecting complex **nested if statements (3 times at least)** in Java code using XPath. The rule is defined as follows, containing the XPath expression ```//IfStatement[.//IfStatement[.//IfStatement]]```:
+```pmd.bat designer```, we developed a custom rule for PMD aimed at detecting complex **nested if statements (3 times at least)** in Java code using XPath. 
+
+The rule is defined as follows, containing the following XPath expression ```//IfStatement[.//IfStatement[.//IfStatement]]```:
 
 ```xml
 <?xml version="1.0"?>
@@ -62,9 +64,9 @@ pmd check -f text -R "..\pmd_rule.xml" -d "..\commons-collections-master" -r "..
 ```
 In this command, the rule is defined in the file named **pmd_rule.xml**, and the results of the PMD static analysis are stored in a file named **ResultEx3.txt**.
 
-### Analysis Results
+### Analysis Results :
 Upon running the analysis, we encountered the following result:
-```
+``` txt
 ..\commons-collections-master\src\main\java\org\apache\commons\collections4\bidimap\TreeBidiMap.java:1158:	NestedIf :	Avoid complex nested if statements
 ```
 The relevant code can be found [here TreeBidiMap.java](https://github.com/apache/commons-collections/blob/master/src/main/java/org/apache/commons/collections4/bidimap/TreeBidiMap.java) at line 1158.
