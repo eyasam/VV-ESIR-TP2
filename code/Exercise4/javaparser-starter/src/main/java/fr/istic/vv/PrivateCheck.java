@@ -12,6 +12,11 @@ public class PrivateCheck extends VoidVisitorAdapter<Void> {
 
     private final Map<String, Set<String>> fieldsWithoutGetters = new HashMap<>();
 
+    /**
+     * Visits a class declaration and identifies private fields that do not have public getter methods
+     * @param clazz : The class declaration being visited.
+     * @param arg: Additional argument
+     */
     @Override
     public void visit(ClassOrInterfaceDeclaration clazz, Void arg) {
         // only public classes
@@ -28,10 +33,10 @@ public class PrivateCheck extends VoidVisitorAdapter<Void> {
             }
         });
 
-        // Find public getter methods
+        // Find public getter methods and xtract field name 
         clazz.getMethods().forEach(method -> {
             if (method.isPublic() && method.getParameters().isEmpty() && method.getNameAsString().startsWith("get")) {
-                publicGetters.add(method.getNameAsString().substring(3)); // Extract field name from getter
+                publicGetters.add(method.getNameAsString().substring(3)); 
             }
         });
 
@@ -45,6 +50,11 @@ public class PrivateCheck extends VoidVisitorAdapter<Void> {
         }
     }
 
+    
+    /**
+     * Retrieves the map of classes and their corresponding private fields without getter
+     * @return A map where the key is the class name and the value is a set of private fields without getters.
+     */
     public Map<String, Set<String>> getFieldsWithoutGetters() {
         return fieldsWithoutGetters;
     }
